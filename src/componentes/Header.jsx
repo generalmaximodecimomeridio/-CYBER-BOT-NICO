@@ -36,7 +36,7 @@ export const Header = () => {
             </li>
             
             <li className="nav-item">
-              <a href="#" className="nav-link text-light px-2">Procesar</a>
+              <Link to="/procesar" className="nav-link text-neon-cyan px-2 fs-5">Procesar</Link>
             </li>
             
             <li className="nav-item">
