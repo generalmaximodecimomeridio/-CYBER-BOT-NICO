@@ -1,0 +1,94 @@
+/* ==========================================================================
+   ESTILOS GLOBALES - TEMÁTICA BIONEON / CYBERPUNK JARDINERÍA
+   ========================================================================== */
+
+body {
+  background-color: #0a0f0d; 
+  color: #e0eae5;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Efectos de texto Neón */
+.text-neon-green {
+  color: #39ff14;
+  text-shadow: 0 0 5px #39ff14, 0 0 15px #39ff14, 0 0 30px #1b8a07;
+}
+.text-neon-cyan {
+  color: #00f0ff;
+  text-shadow: 0 0 5px #00f0ff, 0 0 15px #00f0ff, 0 0 25px #008b9b;
+}
+.text-neon-pink {
+  color: #ff007f;
+  text-shadow: 0 0 5px #ff007f, 0 0 15px #ff007f;
+}
+
+/* Contenedores con bordes luminosos (Glow Effect) */
+.border-neon-green {
+  border: 2px solid #39ff14 !important;
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3), inset 0 0 10px rgba(57, 255, 20, 0.2);
+}
+.border-neon-cyan {
+  border: 2px solid #00f0ff !important;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+/* Bordes internos de la cuadrícula de noticias */
+.border-end.border-neon-cyan {
+  border-right: 2px solid #00f0ff !important;
+}
+
+/* Ajustes de Bootstrap para tarjetas y carrusel al estilo Cyber */
+.cyber-card {
+  background: rgba(13, 22, 18, 0.85);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cyber-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.6) !important;
+}
+
+/* Navbar y Footer Personalizados */
+.cyber-navbar {
+  background-color: #060a08 !important;
+  border-bottom: 2px solid #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+.cyber-footer {
+  background-color: #050807;
+  border-top: 2px solid #ff007f;
+  box-shadow: 0 -0px 15px rgba(255, 0, 127, 0.3);
+}
+
+/* Efectos de Links en el Menú */
+nav ul li a {
+  transition: all 0.25s ease-in-out;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+nav ul li a:hover {
+  color: #00f0ff !important;
+  text-shadow: 0 0 8px #00f0ff;
+  background-color: rgba(0, 240, 255, 0.07);
+}
+.active-link {
+  color: #39ff14 !important;
+  text-shadow: 0 0 8px #39ff14;
+  border-bottom: 2px solid #39ff14;
+}
+
+/* Animación Carrusel */
+.carrusel-estatico {
+  transform: translateX(0);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.carrusel-impulso {
+  animation: cargaYDispara 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+@keyframes cargaYDispara {
+  0% { transform: translateX(0); opacity: 1; }
+  30% { transform: translateX(35px); opacity: 0.95; }
+  100% { transform: translateX(-120%); opacity: 0; }
+}

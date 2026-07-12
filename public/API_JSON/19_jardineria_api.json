@@ -1,0 +1,137 @@
+{
+  "listado_jardineria": [
+    {
+      "id": 1,
+      "producto": "Tijera de Podar",
+      "vivero": {
+        "precio": 14990,
+        "herramienta": {
+          "categoria": "Poda",
+          "codigo": 1234,
+          "uso": "Jardín Exterior",
+          "proveedor": {
+            "nombre": "GardenTools"
+          }
+        },
+        "asesoria": {
+          "ventas": "600 123 4567",
+          "mantencion": "800 123 456"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "producto": "Manguera Reforzada",
+      "vivero": {
+        "precio": 19990,
+        "herramienta": {
+          "categoria": "Riego",
+          "codigo": 5678,
+          "uso": "Áreas Verdes",
+          "proveedor": {
+            "nombre": "AgroRiego"
+          }
+        },
+        "asesoria": {
+          "ventas": "600 234 5678",
+          "mantencion": "800 234 567"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "producto": "Macetero Decorativo",
+      "vivero": {
+        "precio": 8990,
+        "herramienta": {
+          "categoria": "Decoración",
+          "codigo": 910,
+          "uso": "Interior",
+          "proveedor": {
+            "nombre": "EcoMacetas"
+          }
+        },
+        "asesoria": {
+          "ventas": "600 345 6789",
+          "mantencion": "800 345 678"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "producto": "Fertilizante Orgánico",
+      "vivero": {
+        "precio": 6990,
+        "herramienta": {
+          "categoria": "Fertilización",
+          "codigo": 1357,
+          "uso": "Huerto Casero",
+          "proveedor": {
+            "nombre": "BioCultivo"
+          }
+        },
+        "asesoria": {
+          "ventas": "600 456 7890",
+          "mantencion": "800 456 789"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "producto": "Pala Jardinera",
+      "vivero": {
+        "precio": 11990,
+        "herramienta": {
+          "categoria": "Excavación",
+          "codigo": 4567,
+          "uso": "Plantación",
+          "proveedor": {
+            "nombre": "CampoVerde"
+          }
+        },
+        "asesoria": {
+          "ventas": "600 567 8901",
+          "mantencion": "800 567 890"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "producto": "Semillas de Césped",
+      "vivero": {
+        "precio": 9990,
+        "herramienta": {
+          "categoria": "Siembra",
+          "codigo": 2345,
+          "uso": "Jardín Residencial",
+          "proveedor": {
+            "nombre": "VerdePlus"
+          }
+        },
+        "asesoria": {
+          "ventas": "600 678 9012",
+          "mantencion": "800 678 901"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "producto": "Regadera Metálica",
+      "vivero": {
+        "precio": 12990,
+        "herramienta": {
+          "categoria": "Riego Manual",
+          "codigo": 123,
+          "uso": "Plantas de Interior",
+          "proveedor": {
+            "nombre": "FlorCasa"
+          }
+        },
+        "asesoria": {
+          "ventas": "600 789 0123",
+          "mantencion": "800 789 012"
+        }
+      }
+    }
+  ]
+}
