@@ -12,20 +12,25 @@ export const NotFound = () => {
         <div className="text-center">
           
           {/* Gato ASCII Cyber */}
-          <pre 
-            className="sad-face text-neon-cyan mb-4" 
-            style={{ 
-              fontFamily: 'monospace', 
-              lineHeight: '1', 
-              display: 'inline-block',
-              textAlign: 'left',
-              fontSize: "16px" 
-            }}
-          >
-{`           へ Error404  ╱| 、
-       ૮ - _ ՛)        (-_ - 7
-        / ⁻  ៸|         |、 ⁻〵
-     乀 (ˍ,ل ل          じしˍ,)ノ`}
+          <pre
+  className="sad-face text-neon-cyan mb-4"
+  style={{
+    fontFamily: '"Cascadia Code", Consolas, monospace',
+    lineHeight: 1,
+    display: "inline-block",
+    textAlign: "left",
+    fontSize: "16px",
+    whiteSpace: "pre",
+    overflow: "hidden",
+    margin: 0,
+    padding: 0,
+    maxWidth: "100%"
+  }}
+>
+{`           へ  Error404  ╱| 、
+       ૮ - _ ՛)         (-_ - 7
+        / ⁻  ៸|          |、 ⁻〵
+     乀 (ˍ,ل ل           じしˍ,)ノ`}
           </pre>
 
           <h1 className="text-neon-cyan display-1 fw-bold mb-2">404</h1>

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
+// Palabras clave de los productos que SÍ tienen imagen
+const clavesImagenes = ["pala jardinera", "pala", "tijera de podar", "tijera", "herramientas"];
+
 export const Procesar = () => {
-  // 1. Inicializamos el estado leyendo el 'localStorage'. 
-  // Si hay datos guardados previamente, los cargamos; si no, iniciamos vacío.
   const [registros, setRegistros] = useState(() => {
     const datosGuardados = localStorage.getItem('registros_cyberbotanicos');
     return datosGuardados ? JSON.parse(datosGuardados) : [];
@@ -15,7 +16,6 @@ export const Procesar = () => {
     dato6: '', dato7: '', dato8: 'Opción 1', dato9: '', dato10: ''
   });
 
-  // 2. Cada vez que 'registros' cambie, lo guardamos automáticamente en localStorage
   useEffect(() => {
     localStorage.setItem('registros_cyberbotanicos', JSON.stringify(registros));
   }, [registros]);
@@ -31,7 +31,6 @@ export const Procesar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setRegistros([...registros, formData]);
-    // Limpiamos el formulario
     setFormData({
       dato1: '', dato2: '', dato3: '', dato4: '', dato5: '',
       dato6: '', dato7: '', dato8: 'Opción 1', dato9: '', dato10: ''
@@ -43,33 +42,37 @@ export const Procesar = () => {
     setRegistros(nuevaLista);
   };
 
-  // 3. FUNCIÓN PARA CARGAR EL JSON Y GUARDARLO EN STORAGE
   const cargarDatosJSON = async () => {
     try {
-      // Usamos la misma ruta que usa tu Api.jsx
       const res = await fetch('/API_JSON/19_jardineria_api.json');
       if (!res.ok) throw new Error("No se pudo cargar el JSON");
       
       const data = await res.json();
       const listado = data.listado_jardineria || [];
 
-      // Procesamos los valores brutos del JSON para adaptarlos a tu tabla de "Datos"
-      const registrosProcesados = listado.map((item) => ({
-        dato1: item.producto,                                 // Nombre
-        dato2: item.vivero.precio,                            // Precio
-        dato3: item.vivero.herramienta.categoria,             // Categoría
-        dato4: item.vivero.herramienta.uso,                   // Uso
-        dato5: item.vivero.herramienta.proveedor.nombre,      // Proveedor
-        dato6: item.vivero.asesoria.ventas,                   // Fono Ventas
-        dato7: item.vivero.asesoria.mantencion,               // Fono Mantención
-        dato8: `Cód: ${item.vivero.herramienta.codigo}`,      // Código
-        dato9: 'Importado JSON',                              // Etiqueta
-        dato10: 'Disponible'                                  // Estado
-      }));
+      const registrosProcesados = listado.map((item) => {
+        // === LA MAGIA ESTÁ AQUÍ ===
+        // Revisamos si el producto tiene imagen basándonos en su nombre
+        const nombreLimpio = String(item.producto).trim().toLowerCase();
+        const tieneImagen = clavesImagenes.some(clave => nombreLimpio.includes(clave));
 
-      // Agregamos los nuevos registros a los que ya existen
+        return {
+          dato1: item.producto,                                 
+          dato2: item.vivero.precio,                            
+          dato3: item.vivero.herramienta.categoria,             
+          dato4: item.vivero.herramienta.uso,                   
+          dato5: item.vivero.herramienta.proveedor.nombre,      
+          dato6: item.vivero.asesoria.ventas,                   
+          dato7: item.vivero.asesoria.mantencion,               
+          dato8: `Cód: ${item.vivero.herramienta.codigo}`,      
+          dato9: 'Importado JSON',                              
+          // Si tiene imagen es "Disponible", si no, es "Agotado"
+          dato10: tieneImagen ? 'Disponible' : 'Agotado'                                  
+        };
+      });
+
       setRegistros([...registros, ...registrosProcesados]);
-      alert("¡Datos del JSON procesados y guardados en Storage con éxito!");
+      alert("¡Datos cargados! Los productos sin imagen se marcaron como Agotados automáticamente.");
 
     } catch (error) {
       console.error("Error al procesar el JSON:", error);
@@ -77,7 +80,6 @@ export const Procesar = () => {
     }
   };
 
-  // 4. FUNCIÓN PARA LIMPIAR TODO EL STORAGE
   const purgarSistema = () => {
     if (window.confirm("¿Estás seguro de eliminar todos los registros del Storage?")) {
       setRegistros([]);
@@ -85,7 +87,6 @@ export const Procesar = () => {
     }
   };
 
-  // Cálculos estadísticos usando Dato2 (Precio)
   const cantidad = registros.length;
   const suma = registros.reduce((acc, reg) => acc + (Number(reg.dato2) || 0), 0);
   const promedio = cantidad > 0 ? (suma / cantidad).toFixed(2) : 0;
@@ -111,7 +112,6 @@ export const Procesar = () => {
             </div>
           </div>
 
-          {/* ================= FORMULARIO ================= */}
           <form onSubmit={handleSubmit} className="text-light">
             <div className="row mb-3 align-items-center">
               <div className="col-md-2">
@@ -194,7 +194,6 @@ export const Procesar = () => {
             </div>
           </form>
 
-          {/* ================= LISTADO STORAGE ================= */}
           <div className="mt-5 p-3 border border-1 border-neon-cyan bg-black rounded position-relative">
             <h3 className="text-center fw-bold mb-3 text-neon-cyan">
               Registros en Almacenamiento Local (Storage)
@@ -241,7 +240,7 @@ export const Procesar = () => {
                         <td>{item.dato8}</td>
                         <td className="fst-italic">{item.dato9}</td>
                         <td>
-                          <span className={`badge ${item.dato10 === 'Disponible' ? 'bg-success' : 'bg-secondary'}`}>
+                          <span className={`badge ${item.dato10 === 'Disponible' ? 'bg-success' : 'bg-danger'}`}>
                             {item.dato10}
                           </span>
                         </td>

@@ -8,16 +8,12 @@ import { Footer } from './Footer';
 import imgPala from '../imagenes/palametalanegra.jpg';
 import imgHerramientas from '../imagenes/herramientas_jardin01.jpg';
 
-// =====================================================================
-// MAPA DE IMÁGENES (expandido según tus capturas)
-// =====================================================================
 const mapImagenes = {
   "pala jardinera": imgPala,
   "pala": imgPala,
   "tijera de podar": imgHerramientas,
   "tijera": imgHerramientas,
   "herramientas": imgHerramientas,
-  // Agrega más según los productos de tu JSON
 };
 
 export const Api = () => {
@@ -56,6 +52,7 @@ export const Api = () => {
             id: item?.id || index,
             producto: productoRaw,
             imagen,
+            // Si hay imagen es Disponible, si no, es Agotado
             estado: imagen ? "Disponible" : "Agotado",
             precio,
             categoria,
@@ -99,10 +96,10 @@ export const Api = () => {
   }
 
   return (
-    <div>
+    <div className="min-vh-100 bg-black d-flex flex-column">
       <Header />
       
-      <main className="container my-4 p-4" style={{ border: "2px solid #00f0ff", borderRadius: "8px", background: "rgba(10, 10, 10, 0.95)" }}>
+      <main className="container my-4 p-4 flex-grow-1 border-neon-cyan rounded" style={{ background: "rgba(10, 10, 10, 0.95)" }}>
         
         <h2 className="text-center fw-bold mb-5 text-neon-cyan text-uppercase" style={{ letterSpacing: "3px" }}>
           INVENTARIO CYBER-BOTÁNICO
@@ -111,36 +108,37 @@ export const Api = () => {
         <div className="row g-4">
           {productos.map((item) => (
             <div key={item.id} className="col-md-4 col-sm-6">
-              <div className="cyber-card border-neon-cyan p-0 h-100 text-light rounded position-relative overflow-hidden">
+              <div className="cyber-card border-neon-cyan p-0 h-100 text-light rounded position-relative overflow-hidden" style={{ backgroundColor: "#111" }}>
                 
-                {/* === AGOTADO CON ESTILO ROJO RAYADO === */}
+                {/* === CONDICIÓN DE IMAGEN === */}
                 {item.estado === "Agotado" ? (
-                  <div className="caja-agotado d-flex align-items-center justify-content-center" style={{ height: "220px" }}>
+                  <div className="caja-agotado d-flex flex-column align-items-center justify-content-center bg-dark" style={{ height: "220px", borderBottom: "1px solid #00f0ff" }}>
                     <h4 className="text-danger fw-bold m-0">AGOTADO</h4>
+                    <span className="text-muted small mt-2">(Sin Imagen)</span>
                   </div>
                 ) : (
                   <img 
                     src={item.imagen} 
                     alt={item.producto} 
                     className="w-100" 
-                    style={{ height: "220px", objectFit: "cover" }}
+                    style={{ height: "220px", objectFit: "cover", borderBottom: "1px solid #00f0ff" }}
                   />
                 )}
 
                 <div className="p-4">
-                  <h5 className="fw-bold text-neon-green mb-3">{item.producto}</h5>
+                  <h5 className="fw-bold text-neon-green mb-3 text-uppercase">{item.producto}</h5>
                   
-                  <p className="mb-1"><strong>Precio:</strong> <span className="text-neon-cyan">${item.precio}</span></p>
+                  <p className="mb-1"><strong>Precio:</strong> <span className="text-neon-yellow">${item.precio}</span></p>
                   <p className="mb-1"><strong>Categoría:</strong> {item.categoria}</p>
                   <p className="mb-1"><strong>Uso:</strong> {item.uso}</p>
                   
                   <hr className="border-neon-pink" />
                   
                   <p className="mb-0">
-                    <strong>Proveedor:</strong> <span className="text-light">{item.proveedor}</span>
+                    <strong>Proveedor:</strong> <span className="text-neon-cyan">{item.proveedor}</span>
                   </p>
 
-                  <div className={`mt-3 badge ${item.estado === "Disponible" ? "bg-success" : "bg-danger"}`}>
+                  <div className={`mt-3 badge ${item.estado === "Disponible" ? "bg-success border border-success" : "bg-dark text-danger border border-danger"}`}>
                     {item.estado}
                   </div>
                 </div>

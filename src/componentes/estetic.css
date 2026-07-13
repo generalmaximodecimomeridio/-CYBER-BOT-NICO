@@ -5,20 +5,38 @@
 /* ==== COLORES NEON ==== */
 /* Verde tóxico/orgánico */
 .text-neon-green {
-    color: #39ff14;
+    color: #39ff14 !important;
     text-shadow: 0 0 5px #39ff14, 0 0 10px #1b8a07;
 }
 
 /* Cian tecnológico/riego */
 .text-neon-cyan {
-    color: #00ffff;
+    color: #00ffff !important;
     text-shadow: 0 0 5px #00ffff, 0 0 10px #008b8b;
 }
 
 /* Rosa magenta/herramientas */
 .text-neon-pink {
-    color: #ff00ff;
+    color: #ff00ff !important;
     text-shadow: 0 0 5px #ff00ff, 0 0 10px #8b008b;
+}
+
+/* Naranja Neon */
+.text-orange-neon {
+    color: #ff9500 !important;
+    text-shadow: 0 0 5px #ff9500, 0 0 10px #ff5500;
+}
+
+/* Morado Neon para FAQs */
+.text-neon-purple {
+    color: #c724ff !important;
+    text-shadow: 0 0 5px #c724ff, 0 0 10px #8a2be2;
+}
+
+/* Azul Neon para LOGIN */
+.text-neon-blue {
+    color: #00bfff !important;
+    text-shadow: 0 0 5px #00bfff, 0 0 10px #1e90ff;
 }
 
 /* ==== BORDES NEON ==== */
@@ -118,9 +136,4 @@
     text-shadow: 0 0 15px #ff007f;
     text-transform: uppercase;
     letter-spacing: 3px;
-}
-/* Naranja Neon */
-.text-orange-neon {
-    color: #ff9500;
-    text-shadow: 0 0 5px #ff9500, 0 0 10px #ff5500;
 }

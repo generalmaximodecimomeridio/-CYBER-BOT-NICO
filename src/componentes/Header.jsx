@@ -28,7 +28,7 @@ export const Header = () => {
             </li>
             
             <li className="nav-item">
-              <a href="#" className="nav-link text-light px-2">FAQs</a>
+              <Link to="/faqs" className="nav-link text-neon-purple px-2 fs-5">FAQs</Link>
             </li>
             
             <li className="nav-item">
@@ -43,9 +43,9 @@ export const Header = () => {
               <Link to="/api" className="nav-link text-neon-cyan px-2 fs-5">Api</Link>
             </li>
             
-            {/* LOGIN en Naranja Neon */}
+            {/* LOGIN en Azul Neon */}
             <li className="nav-item">
-              <a href="#" className="nav-link text-orange-neon px-2 fs-5">LOGIN</a>
+              <Link to="/login" className="nav-link text-neon-blue px-2 fs-5">LOGIN</Link>
             </li>
           </ul>
         </nav>
