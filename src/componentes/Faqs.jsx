@@ -6,23 +6,38 @@ export const Faqs = () => {
   const faqs = [
     {
       id: "collapseOne",
-      pregunta: "¿Cómo realizan los despachos dentro de Chile?",
-      respuesta: "Hacemos envíos a todo el territorio nacional a través de agencias de transporte integradas en nuestra red. El tiempo estimado de entrega varía entre 48 y 72 horas hábiles dependiendo de la región."
+      pregunta: "¿El uso del sitio web tiene algún costo?",
+      respuesta: "Texto descriptivo, respondiendo a la pregunta."
     },
     {
       id: "collapseTwo",
-      pregunta: "¿Los productos importados cuentan con garantía oficial?",
-      respuesta: "Sí, todas nuestras herramientas automáticas y manuales importadas cuentan con una garantía técnica de 6 meses contra cualquier falla de fabricación."
+      pregunta: "¿Puedo acceder al sitio desde dispositivos móviles?",
+      respuesta: "Texto descriptivo, respondiendo a la pregunta."
     },
     {
       id: "collapseThree",
-      pregunta: "¿Cómo funciona la regla de disponibilidad e imágenes?",
-      respuesta: "Nuestro inventario actualiza dinámicamente. Si el producto tiene imagen válida se muestra como 'Disponible', de lo contrario aparece como 'Agotado'."
+      pregunta: "¿Existe algún límite de zona para usar la aplicación?",
+      respuesta: "Texto descriptivo, respondiendo a la pregunta."
     },
     {
       id: "collapseFour",
-      pregunta: "¿Qué métodos de pago acepta el sistema?",
-      respuesta: "Aceptamos Webpay, transferencias bancarias y pasarelas seguras. Toda transacción queda registrada de forma segura en el sistema."
+      pregunta: "¿Es seguro ingresar mis datos personales en este sitio?",
+      respuesta: "Texto descriptivo, respondiendo a la pregunta."
+    },
+    {
+      id: "collapseFive",
+      pregunta: "¿Cómo puedo actualizar mis datos personales?",
+      respuesta: "Texto descriptivo, respondiendo a la pregunta."
+    },
+    {
+      id: "collapseSix",
+      pregunta: "¿Olvidé mi contraseña, cómo puedo recuperarla?",
+      respuesta: "Texto descriptivo, respondiendo a la pregunta."
+    },
+    {
+      id: "collapseSeven",
+      pregunta: "¿Cómo puedo contactar al servicio de atención al cliente?",
+      respuesta: "Texto descriptivo, respondiendo a la pregunta."
     }
   ];
 

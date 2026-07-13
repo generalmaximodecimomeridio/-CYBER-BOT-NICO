@@ -13,14 +13,23 @@ export const Noticia2 = () => {
         
         <h3 className="text-center fw-bold mb-4 text-neon-pink">Tijera Cortasetos de Dos Manos - Precisión Profesional</h3>
 
-        <div className="border border-2 border-neon-cyan mb-4 overflow-hidden rounded">
-          <img 
-            src={imgTijera} 
-            alt="Tijera Cortasetos" 
-            className="w-100" 
-            style={{ height: "350px", objectFit: "cover" }} 
-          />
-        </div>
+        {/* Imagen Principal Centrada */}
+{/* Imagen Principal Centrada Correctamente */}
+<div className="border border-2 border-neon-cyan mb-4 overflow-hidden rounded" 
+     style={{ height: "260px", width: "100%", backgroundColor: "#111" }}>
+  
+  <div className="d-flex justify-content-center align-items-center h-100 w-100">
+    <img 
+      src={imgTijera} 
+      alt="Tijera Cortasetos" 
+      style={{ 
+        maxWidth: "90%", 
+        maxHeight: "90%", 
+        objectFit: "contain" 
+      }} 
+    />
+  </div>
+</div>
 
         <div className="border border-2 border-neon-pink p-4 text-light mb-4 rounded">
           <p className="mb-0 fs-5">

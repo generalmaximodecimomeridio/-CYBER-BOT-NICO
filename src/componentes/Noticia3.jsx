@@ -13,14 +13,20 @@ export const Noticia3 = () => {
         
         <h3 className="text-center fw-bold mb-4 text-neon-pink">Compost Orgánico Madurado - El Secreto de un Jardín Saludable</h3>
 
-        <div className="border border-2 border-neon-cyan mb-4 overflow-hidden rounded">
-          <img 
-            src={imgCompost} 
-            alt="Compost Orgánico" 
-            className="w-100" 
-            style={{ height: "350px", objectFit: "cover" }} 
-          />
-        </div>
+        {/* Imagen Principal Centrada */}
+<div className="border border-2 border-neon-cyan mb-4 overflow-hidden rounded d-flex justify-content-center align-items-center" 
+     style={{ height: "280px", backgroundColor: "#111" }}>
+  
+  <img 
+    src={imgCompost} 
+    alt="Pala Jardinera" 
+    style={{ 
+      maxWidth: "100%", 
+      maxHeight: "100%", 
+      objectFit: "contain" 
+    }} 
+  />
+</div>
 
         <div className="border border-2 border-neon-pink p-4 text-light mb-4 rounded">
           <p className="mb-0 fs-5">

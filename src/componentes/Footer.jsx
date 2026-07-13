@@ -35,13 +35,13 @@ export const Footer = () => {
           <h5 className="fw-bold mb-4 text-neon-green">Información Relevante</h5>
           <div>
             <p className="mb-2 fw-bold">
-              Ubicación: <span className="fst-italic fw-normal text-light">Texto Inventado.</span>
+              Ubicación: <span className="fst-italic fw-normal text-light">Narnia de constantinopla.</span>
             </p>
             <p className="mb-2 fw-bold">
-              Fono <span className="ms-4 text-neon-pink">:</span> <span className="fst-italic fw-normal text-light">Texto Inventado.</span>
+              Fono <span className="ms-4 text-neon-pink">:</span> <span className="fst-italic fw-normal text-light">No hay.</span>
             </p>
             <p className="mb-0 fw-bold">
-              Director <span className="ms-3 text-neon-pink">:</span> <span className="fst-italic fw-normal text-light">Texto Inventado.</span>
+              Director <span className="ms-3 text-neon-pink">:</span> <span className="fst-italic fw-normal text-light">Narnia en la casa de alado.</span>
             </p>
           </div>
         </div>

@@ -34,24 +34,24 @@ export const Testimonios = () => {
             <div className="col" key={user.id}>
               <div className="d-flex flex-column align-items-center h-100">
                 
-                {/* Imagen Circular Mejorada */}
+                {/* Imagen Circular - Versión Final */}
                 <div 
                   className="mb-4 d-flex justify-content-center align-items-center overflow-hidden" 
                   style={{ 
-                    width: "175px", 
-                    height: "175px", 
-                    borderRadius: "50%", 
-                    border: "4px solid #00ffff",
-                    boxShadow: "0 0 30px #00ffff" 
+                    width: "180px",      // ← Más grande
+                    height: "195px",     // ← Más grande
+                    borderRadius: "100%", 
+                    border: "5px solid #00ffff",
+                    boxShadow: "0 0 35px #00ffff" 
                   }}
                 >
                   <img 
                     src={user.imagen} 
                     alt={user.nombre} 
                     style={{ 
-                      width: "100%", 
+                      width: "100", 
                       height: "100%", 
-                      objectFit: "contain",     // ← Cambiado para que se vea completa
+                      objectFit: "cover",     // ← Volvimos a cover para que llene mejor
                       backgroundColor: "#111" 
                     }} 
                   />
