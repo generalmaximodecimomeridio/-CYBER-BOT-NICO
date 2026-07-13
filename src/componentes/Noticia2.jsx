@@ -2,64 +2,51 @@ import React from 'react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
-// 👇 AQUÍ ESTABA EL ERROR. ¡Asegúrate de que diga Noticia2!
+import imgTijera from '../imagenes/Tijera Cortasetos de Dos Manos.png';
+
 export const Noticia2 = () => {
   return (
     <div>
-      {/* Carga el Header arriba */}
       <Header />
       
-      {/* Contenedor principal con el borde negro grueso */}
-      <main className="container my-4 p-4" style={{ border: "2px solid black" }}>
+      <main className="container my-4 p-4 border-neon-cyan rounded" style={{ background: "rgba(10, 10, 10, 0.95)" }}>
         
-        {/* Título de la noticia */}
-        <h3 className="text-center fw-bold mb-4">Título de Noticia 2</h3>
+        <h3 className="text-center fw-bold mb-4 text-neon-pink">Tijera Cortasetos de Dos Manos - Precisión Profesional</h3>
 
-        {/* Caja 1: Imagen Principal */}
-        <div className="border border-2 border-dark d-flex justify-content-center align-items-center mb-4" 
-             style={{ height: "250px", backgroundColor: "#f8f9fa" }}>
-          <h4 className="fw-bold mb-0">Imagen Principal de Noticia 1</h4>
-          {/* Cuando tengas la imagen real, puedes reemplazar el <h4> de arriba por:
-              <img src={rutaDeTuImagen} alt="Noticia 1" style={{ width: "100%", height: "100%", objectFit: "cover" }} /> 
-          */}
+        <div className="border border-2 border-neon-cyan mb-4 overflow-hidden rounded">
+          <img 
+            src={imgTijera} 
+            alt="Tijera Cortasetos" 
+            className="w-100" 
+            style={{ height: "350px", objectFit: "cover" }} 
+          />
         </div>
 
-        {/* Caja 2: Párrafo Principal (Resumen) */}
-        <div className="border border-2 border-dark p-4 text-center mb-4 d-flex justify-content-center align-items-center">
+        <div className="border border-2 border-neon-pink p-4 text-light mb-4 rounded">
           <p className="mb-0 fs-5">
-            Párrafo de texto principal de noticia 1 <br/>
-            (descripción general resumida).
+            Tijera Cortasetos de Dos Manos. Herramienta de alta precisión para tus setos y arbustos.
           </p>
         </div>
 
-        {/* Caja 3: Las 3 columnas inferiores */}
-        <div className="row g-4 mb-2">
-          
-          {/* Columna Izquierda */}
+        <div className="row g-4">
           <div className="col-md-4">
-            <div className="border border-2 border-dark p-4 h-100 text-center d-flex align-items-center justify-content-center">
-              <p className="mb-0">Párrafo de texto con la primera parte de la noticia.</p>
+            <div className="border border-2 border-neon-cyan p-4 h-100 text-light rounded">
+              <p>Diseño ergonómico que reduce la fatiga en sesiones largas de poda.</p>
             </div>
           </div>
-          
-          {/* Columna Central */}
           <div className="col-md-4">
-            <div className="border border-2 border-dark p-4 h-100 text-center d-flex align-items-center justify-content-center">
-              <p className="mb-0">Párrafo de texto con la segunda parte de la noticia.</p>
+            <div className="border border-2 border-neon-cyan p-4 h-100 text-light rounded">
+              <p>Hojas afiladas de acero premium para cortes limpios y precisos.</p>
             </div>
           </div>
-          
-          {/* Columna Derecha */}
           <div className="col-md-4">
-            <div className="border border-2 border-dark p-4 h-100 text-center d-flex align-items-center justify-content-center">
-              <p className="mb-0">Párrafo de texto con la tercera parte de la noticia.</p>
+            <div className="border border-2 border-neon-cyan p-4 h-100 text-light rounded">
+              <p>Ideal para jardines grandes y mantenimiento profesional.</p>
             </div>
           </div>
-
         </div>
       </main>
 
-      {/* Carga el Footer abajo */}
       <Footer />
     </div>
   );
